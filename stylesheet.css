@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color: rgb(20, 20, 20);
+  --card-color: rgb(23, 23, 23);
+}
+
+/* Navigation goes here */
+/* Navigation goes here */
+/* Navigation goes here */
+
+body {
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  height: 70px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 100px;
+}
+
+.nav-logo {
+  color: #d8d8d8;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 250ms;
+}
+
+.nav-logo:hover {
+  color: #FFC224;
+}
+
+.nav-list {
+  color: rgb(160, 160, 160);
+  width: 70%;
+  height: 100%;
+  outline: 1px solid rgb(160, 160, 160, .5);
+  border-radius: 0px 0px 0px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+.nav-list > ul {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  
+}
+
+.nav-list > ul > li {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 400;
+  transition: 250ms;
+}
+
+.nav-link:hover {
+  color: #FFC224;
+}
+
+/* burger goes here */
+/* burger goes here */
+/* burger goes here */
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #f5f5f5;
+  margin: 5px;
+  transition: all 0.333s ease-in-out;
+}
+
+/* Portfolio goes here */
+/* Portfolio goes here */
+/* Portfolio goes here */
+
+#cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(250px, auto);
+  grid-gap: .5em;
+  margin-bottom: 100px;
+  justify-items: stretch;
+  align-items: stretch;
+  padding: 5em;
+}
+
+#cards img {
+  position: absolute;
+  max-width: 75%;
+  max-height: 75%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#cards:hover > .card > .card-border {
+  opacity: 1;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  min-height: 400px;
+  position: relative;
+  width: minmax(800px, auto);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card::before,
+.card > .card-border {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+.card::before {
+  background: radial-gradient(
+    1000px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, .1), 
+    transparent 40%
+    );
+    z-index: 3;
+}
+
+.card > .card-border {
+  background: radial-gradient(
+    1000px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, .75),
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+.card > .card-content {
+  background-color: var(--card-color);
+  border-radius: inherit;
+  height: calc(100% - 2px);
+  margin: 1px;
+  position: relative;
+  width: calc(100% - 2px);
+  z-index: 2;
+}
+
+/* Portfolio grid goes here */
+/* Portfolio grid goes here */
+/* Portfolio grid goes here */
+
+.grid-01 {
+  grid-column: 1/3;
+  grid-row: 1/3;
+}
+
+.grid-02 {
+  grid-column: 3;
+}
+
+.grid-03 {
+  grid-column: 3;
+}
+
+.grid-04 {
+  grid-column: 1;
+}
+
+.grid-05 {
+  grid-column: 2;
+}
+
+.grid-06 {
+  grid-column: 3;
+}
+
+.grid-07 {
+  grid-column: 1;
+}
+
+.grid-08 {
+  grid-column: 1;
+}
+.grid-09 {
+  grid-column: 2/4;
+  grid-row: 4/6
+}
+.grid-10 {
+  grid-column: 1;
+}
+.grid-11 {
+  grid-column: 2;
+}
+.grid-12 {
+  grid-column: 3;
+}
+
+/* Footer goes here */
+/* Footer goes here */
+/* Footer goes here */
+
+footer {
+  color: rgb(245, 245, 245);
+  padding: 1em;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  max-width: 100%;
+  margin-bottom: 50px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #f5f5f5;
+}
+
+.footer-nav a:hover {
+  color: #FFC224;
+}
+
+/* Screen sizes go here */
+/* Screen sizes go here */
+/* Screen sizes go here */
